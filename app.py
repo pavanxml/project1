@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = "pavanragahavakumarnayudu@gmail.com"
+app.config["MAIL_USERNAME"] = ""
 app.config["MAIL_PASSWORD"] = ""
 mail = Mail(app)
 
@@ -20,7 +20,7 @@ isLoggedIn = False
 credentials = {
     "steeve@gmail.com":"Steeve#123",
      "tony@gmail.com":"Tony#123"
-    }
+    }   
 
 @app.route("/", methods=["GET", "POST"])
 def homepage():
@@ -44,8 +44,8 @@ def calculator():
             n1 = int(request.form["num1"])
             opr = request.form["opr"]
             n2 = int(request.form["num2"])
-            msg = Message(subject="calculation", sender="pavanragahavakumarnayudu@gmail.com",
-                        recipients=["pavanragavakumarnayudu@gmail.com"]
+            msg = Message(subject="calculation", sender="",
+                        recipients=[""]
                         )
             if opr == "add":
                 res = f"{n1} + {n2} is {n1+n2}"
